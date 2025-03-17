@@ -3710,14 +3710,9 @@ sub,sup{
 
 #post{
     font-size:120%;
-    width:90%;
+    width:80%;
     margin:0 auto;
     max-width:960px
-}
-@media only screen and (min-width:768px){
-    #post{
-        width:80%
-    }
 }
 .post #particles-js{
     background:#1a222c;
@@ -3754,7 +3749,36 @@ sub,sup{
     text-decoration: none;
     color: inherit;
 }
-
+#post img
+{
+    max-width: 100%;
+    height: auto;
+}
+@media only screen and (max-width: 767px) {
+    #post {
+        font-size: 100%;
+        width: 90%;
+        padding: 0 15px;
+    }
+    
+    .post .header {
+        width: 90%;
+    }
+    
+    .post .header .site-title {
+        font-size: 32px;
+    }
+    
+    #post table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+    
+    #post pre {
+        overflow-x: auto;
+    }
+}
 #links a
 {
     text-decoration: none;

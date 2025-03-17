@@ -2,7 +2,7 @@
 title: TaeAhnK's Portfolio
 description: TaeAhnK's Portfolio
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "taeahnk.github.io" # the base hostname & protocol for your site
+url: "https://taeahnk.github.io" # the base hostname & protocol for your site
 
 # User settings
 username: TaeAhnK
