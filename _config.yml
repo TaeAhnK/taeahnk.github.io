@@ -1,0 +1,28 @@
+# Site settings
+title: TaeAhnK's Portfolio
+description: TaeAhnK's Portfolio
+baseurl: "" # the subpath of your site, e.g. /blog
+# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: TaeAhnK
+user_title: Software Engineer
+email: tenny0124@naver.com
+github_username:  TaeAhnK
+blog_name: code-in-coffee
+exclude: ['package.json', 'src', 'node_modules', 'vendor']
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: "/page:num/"
+permalink: /projects/:title/
+
+exclude:
+  - "_posts/previews/**"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntaz_highlighter: rouge
