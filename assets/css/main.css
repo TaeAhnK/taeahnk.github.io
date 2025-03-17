@@ -3598,7 +3598,7 @@ sub,sup{
 
 #projects .contents .content
 {
-    width: 45%;
+    /* width: 45%; */
     margin-bottom: 60px;
     text-align: left;
 }
@@ -3620,6 +3620,12 @@ sub,sup{
 @media only screen and (max-width: 767px) {
     .contents .content {
         width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .contents .content {
+        width: 45%
     }
 }
 
@@ -3664,6 +3670,18 @@ sub,sup{
     width: 30%;
     margin-bottom: 60px;
     text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+    #other-projects .contents .content {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #other-projects .contents .content {
+        width: 30%
+    }
 }
 
 .project
