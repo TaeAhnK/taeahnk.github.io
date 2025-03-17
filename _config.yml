@@ -1,0 +1,30 @@
+# Site settings
+title: TaeAhnK's Portfolio
+description: TaeAhnK's Portfolio
+baseurl: ""
+url: "https://taeahnk.github.io"
+
+# User settings
+username: TaeAhnK
+user_title: Software Engineer
+email: tenny0124@naver.com
+github_username:  TaeAhnK
+blog_name: code-in-coffee
+exclude: ['package.json', 'src', 'node_modules', 'vendor']
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntaz_highlighter: rouge
+
+# Google
+google-analytics: G-C39JGSKQ8B
+
+# Project Folder Settings
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+excerpt_separator: "<!--more-->"

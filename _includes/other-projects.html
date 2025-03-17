@@ -1,0 +1,21 @@
+<div>
+    <h1>Other Projects</h1>
+</div>
+<div class="contents">
+    {% assign other_projects = site.projects | where_exp: "project", "project.main_post != true" %}
+    {% assign sorted_projects = other_projects | sort: "order" | reverse %}
+    {% for project in sorted_projects %}
+    {% unless project.current_project %}
+    <article class="content">
+        <a href="{{ project.url | relative_url }}">
+            <h3>{{ project.title }}</h3>
+            <img src="{{ project.thumbnail | relative_url }}">
+            <div class="excerpt">
+                {{ project.excerpt }}
+            </div>
+        </a>
+    </article>
+    {% endunless %}
+    {% endfor %}
+</div>
+<br><br>
