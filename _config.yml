@@ -26,3 +26,5 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntaz_highlighter: rouge
+
+google-analytics: G-C39JGSKQ8B
