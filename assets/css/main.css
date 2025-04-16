@@ -39,12 +39,16 @@ hr{
 }
 code,kbd,pre,samp{
     font-family: consolas,monospace,monospace;
-    font-size:1em
+    font-size:0.9em
 }
 a{
     background-color:transparent;
     -webkit-text-decoration-skip:objects
 }
+a:link, a:visited {
+    color: rgb(17, 129, 173);
+}
+  
 abbr[title]{
     border-bottom:none;
     text-decoration:underline dotted
@@ -3307,7 +3311,8 @@ article,aside,figcaption,figure,footer,footer2,header,nav,section{
     display:block
 }
 h1,h2,h3,h4,stong{
-    margin-top:1em;
+    margin-top:0.5em;
+    margin-bottom: 0.3em;
     padding-top:1em;
     line-height:1.25;
     color:#333
@@ -3330,6 +3335,10 @@ ol,ul{
 }
 figure,ol,p,ul{
     margin:1em 0
+}
+ul
+{
+    margin-top: 0%;
 }
 a img{
     border:none
