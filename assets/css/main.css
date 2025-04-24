@@ -3383,11 +3383,18 @@ sub,sup{
     min-height:30vh;
     background-repeat:no-repeat;
     background-size:cover;
-    background-attachment:fixed
+    background-attachment:fixed;
+    justify-content: center;
+    align-items: center;
 }
 #particles-js .particles-js-canvas-el{
     height:30vh!important
 }
+
+#particles-js .header {
+    width: 80%;
+  }
+  
 .header{
     font-family:'Montserrat', 'NanumSquare', sans-serif;
     z-index:1;
@@ -3398,7 +3405,9 @@ sub,sup{
     left:50%;
     margin:0 auto;
     -webkit-transform:translate(-50%,-50%);
-    transform:translate(-50%,-50%)
+    transform:translate(-50%,-50%);
+    width: 80%;
+    max-width: 960px;
 }
 .header .site-title{
     font-size:50px;
@@ -3726,27 +3735,29 @@ sub,sup{
 .post #particles-js{
     background:#1a222c;
     display:flex;
-    vertical-align:bottom;
+    flex-direction: column;
     min-height:15vh;
     background-repeat:no-repeat;
     background-size:cover;
-    background-attachment:fixed
+    background-attachment:fixed;
+    justify-content: center;
+    align-items: center;
 }
 .post #particles-js .particles-js-canvas-el{
     height:15vh!important
 }
-.post .header{
-    font-family:'Montserrat', 'NanumSquare', sans-serif;
-    z-index:1;
-    text-align:center;
-    color:#fff;
-    position:absolute;
-    top:6%;
-    left:20%;
-    margin:0 auto;
-    -webkit-transform:translate(-50%,-50%);
-    transform:translate(-50%,-50%)
-}
+.post .header {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 960px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+  }
 .post .header .site-title{
     font-size:50px;
     display:block;
@@ -3805,3 +3816,42 @@ sub,sup{
 {
     padding: 0%;
 }
+
+#other-projects {
+    text-align: left;
+  }
+  
+
+#other-projects .contents {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  
+  #other-projects .content {
+    width: calc(33.333% - 16px); /* 한 줄에 3개씩 */
+    box-sizing: border-box;
+    margin-bottom: 0px;
+  }
+  @media (max-width: 900px) {
+    #other-projects .content { width: calc(50% - 12px); }
+  }
+  @media (max-width: 600px) {
+    #other-projects .content { width: 100%; }
+  }
+  
+  #other-projects .contents .content {
+    margin-bottom: 0px;
+}
+
+table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #333;
+    padding: 8px;
+  }
+  
