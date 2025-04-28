@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mulminono"
-date: 2000-12-31 12:00:00
+date: 2000-12-31 11:00:00
 thumbnail: "assets/thumbnails/Mulminono.png"
 preview_file: "_posts/previews/2000-12-31-Mulminono-preview.md"
 main_post: false
