@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "ZombieSweeper"
-date: 2000-12-31 12:00:00
+date: 2000-01-01 12:00:00
 thumbnail: "assets/thumbnails/ZombieSweeper.png"
-preview_file: "_posts/previews/2000-12-31-ZombieSweeper-preview.md"
+preview_file: "_posts/previews/2000-01-01-ZombieSweeper-preview.md"
 main_post: false
+order : 3
 ---
 ## Demo
 

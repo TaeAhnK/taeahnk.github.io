@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "SproutPang"
-date: 2000-12-31 12:00:00
+date: 2000-01-01 12:00:00
 thumbnail: "assets/thumbnails/SproutPang.png"
-preview_file: "_posts/previews/2000-12-31-SproutPang-Preview.md"
+preview_file: "_posts/previews/2000-01-01-SproutPang-Preview.md"
 main_post: true
+order: 1
 ---
 ## Demo
 

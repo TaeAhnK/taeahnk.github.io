@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "CoDefence"
-date: 2000-12-30 12:00:00
+date: 2000-01-01 12:00:00
 thumbnail: "assets/thumbnails/CoDefence.png"
-preview_file: "_posts/previews/2000-12-30-CoDefece.md"
+preview_file: "_posts/previews/2000-01-01-CoDefece.md"
 main_post: true
+order: 2
 ---
 
 ## Demo
