@@ -3,18 +3,20 @@
 </div>
 <div id="other-projects" class="contents">
     {% assign non_main_posts = paginator.posts | where_exp: "post", "post.main_post != true" %}
-        {% for post in non_main_posts %}
-        <article class="content">
-            <a href="{{ post.url }}">
-                <h3>{{ post.title }}</h3>
-                <img src="{{ baseurl | remove: '.html' }}/{{ post.thumbnail }}" href="{{ post.url }}">
-                <div class="excerpt">
-                    {% if post.preview_file %}
-                        {% capture preview_content %}{% include_relative {{ post.preview_file }} %}{% endcapture %}
-                        {{ preview_content | markdownify }}
-                    {% endif %}
-                </div>
-            </a>
-        </article>
-        {% endfor %}
+    {% assign sorted_posts = non_main_posts | sort: "order" | reverse %}
+    {% for post in sorted_posts %}
+    <article class="content">
+        <a href="{{ post.url }}">
+            <h3>{{ post.title }}</h3>
+            <img src="{{ baseurl | remove: '.html' }}/{{ post.thumbnail }}" href="{{ post.url }}">
+            <div class="excerpt">
+                {% if post.preview_file %}
+                    {% capture preview_content %}{% include_relative {{ post.preview_file }} %}{% endcapture %}
+                    {{ preview_content | markdownify }}
+                {% endif %}
+            </div>
+        </a>
+    </article>
+    {% endfor %}
 </div>
+<br><br>
