@@ -10,7 +10,7 @@ order : 3
 ---
 
 ## Demo
-### 중간 발표 자료
+### 중간발표 자료
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
   <iframe 
@@ -281,7 +281,7 @@ public class BossSkill_Sample : BossSkill
 
 1. 애니메이션 재생
 2. 일정 시간 대기
-3. Player 위치값 받아옴
+3. Player 위칫값 받아옴
 4. `Client`에서 `Indicator` 재생
 5. 일정 시간 대기
 6. `Client`에서 스킬 이팩트 재생
@@ -314,13 +314,13 @@ private IEnumerator ExecuteSkillSequence()
 
 </details>
 
-높은 확률로 첫 `targetPos`의 초기화에 문제가 있을 것이라고 생각해 값을 디버그해보았지만,
+높은 확률로 첫 `targetPos`의 초기화에 문제가 있을 것으로 생각해 값을 디버깅해 보았지만,
 `NetworkVariable`임에도 불구하고 `Host`에서는 정상값, `Client`에서는 (`0,0,0`)이 출력되었습니다.
 
 따라서, `NetworkVariable`의 동기화가 `ActivateIndicatorClientRpc()`보다 늦게 진행되어 발생하는 문제라는 결론을 내렸습니다.
 
 #### 원인 분석
-Unity NetCode의 `Network Variable`은 값이 변경되면, NetCode의 업데이트 주기마다 변경사항이 전달됩니다. 따라서 업데이트가 진행되기 전에 해당 변수를 읽으면 변경되지 않은 값이 전달됩니다. <br>
+Unity NetCode의 `Network Variable`은 값이 변경되면, NetCode의 업데이트 주기마다 변경 사항이 전달됩니다. 따라서 업데이트가 진행되기 전에 해당 변수를 읽으면 변경되지 않은 값이 전달됩니다. <br>
 이 경우 `ActivateIndicatorClientRpc()`가 Network Frame의 업데이트보다 빠르게 실행되어 `targetPos`의 값이 변경되기 전에 실행되었습니다.
 
 
@@ -370,6 +370,6 @@ private void SyncTargetPosClientRpc(Vector3 pos)
 ## Epilogue
 
 이번 프로젝트에서는 NetCode를 활용하여 멀티 플레이 보스 시스템을 구현하였습니다. 처음으로 네트워크 게임 개발에 도전하며 시행착오도 많았지만,
-그동안 배운 네트워크 프로그래밍 내용을 직접 적용하며 실습해볼 수 있었습니다.
+그동안 배운 네트워크 프로그래밍 내용을 직접 적용하며 실습해 볼 수 있었습니다.
 제가 좋아하는 장르를 직접 구현하는 과정이 즐거웠고, 결과물을 보며 큰 만족감을 느꼈습니다. <br><br>
 앞으로는 아직 완성되지 못한 플레이어와 방해 로직의 개발을 마무리하고, 보스 몬스터에 더 다양한 스킬을 추가해 게임의 재미를 더할 예정입니다.
