@@ -2,18 +2,15 @@
     <h1>Projects</h1>
 </div>
 <div class="contents">
-    {% assign main_posts = paginator.posts | where_exp: "post", "post.main_post" %}
-    {% assign sorted_main_posts = main_posts | sort: "order" | reverse %}
-    {% for post in sorted_main_posts %}
+    {% assign main_projects = site.projects | where_exp: "project", "project.main_post" %}
+    {% assign sorted_projects = main_projects | sort: "order" | reverse %}
+    {% for project in sorted_projects %}
     <article class="content">
-        <a href="{{ post.url }}">
-            <h2>{{ post.title }}</h2>
-            <img src="{{ baseurl | remove: '.html' }}/{{ post.thumbnail }}" href="{{ post.url }}">
+        <a href="{{ project.url | relative_url }}">
+            <h2>{{ project.title }}</h2>
+            <img src="{{ project.thumbnail | relative_url }}">
             <div class="excerpt">
-                {% if post.preview_file %}
-                    {% capture preview_content %}{% include_relative {{ post.preview_file }} %}{% endcapture %}
-                    {{ preview_content | markdownify }}
-                {% endif %}
+                    {{ project.excerpt }}
             </div>
         </a>
     </article>

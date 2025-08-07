@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "ZombieSweeper"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/ZombieSweeper.png"
-preview_file: "_posts/previews/2000-01-01-ZombieSweeper-preview.md"
+thumbnail: "assets/img/ZombieSweeper/ZombieSweeper.png"
 main_post: false
 order : 3
 ---
+
+#UnrealEngine #3D #C++ #탈출게임
+
+<!--more-->
 ## Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">

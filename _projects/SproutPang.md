@@ -1,12 +1,16 @@
 ---
 layout: post
 title: "SproutPang"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/SproutPang.png"
-preview_file: "_posts/previews/2000-01-01-SproutPang-Preview.md"
+thumbnail: "assets/img/SproutPang/SproutPang.png"
 main_post: true
 order: 1
 ---
+
+#Unity #Match3 #2D #개인프로젝트<br>
+꼬꼬가 되어 냐옹의 눈을 피해 작물을 훔치는 Match3 게임입니다.
+웹에서 플레이할 수 있습니다.
+
+<!--more-->
 ## Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">

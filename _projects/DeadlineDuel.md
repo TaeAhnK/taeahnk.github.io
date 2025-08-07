@@ -1,14 +1,16 @@
 ---
 layout: post
 title: "DeadlineDuel"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/DeadlineDuel.png"
-preview_file: "_posts/previews/2000-01-01-DeadlineDuel-preview.md"
+thumbnail: "assets/img/DeadlineDuel/DeadlineDuel.png"
 main_post: true
 published: true
 order : 3
 ---
 
+#Unity #3D #액션 #레이드 #팀프로젝트 #보스<br>
+3명이 진행한 팀 프로젝트입니다. 두 플레이어가 서로 다른 보스 몬스터를 잡으며 경쟁하는 경쟁형 액션 PvE 게임입니다. 
+
+<!--more-->
 ## Demo
 ### 중간발표 자료
 

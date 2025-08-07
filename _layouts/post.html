@@ -4,7 +4,7 @@
   <body class="post">
     {% include post-header.html %}
     <section id="post">
-        {{content}}
+        {{content | split: '<!--more-->' | last}}
     </section>
     {% include footer.html %}
   </body>

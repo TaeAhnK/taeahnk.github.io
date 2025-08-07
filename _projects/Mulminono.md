@@ -1,12 +1,18 @@
 ---
 layout: post
 title: "Mulminono"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/Mulminono.png"
-preview_file: "_posts/previews/2000-01-01-Mulminono-preview.md"
+thumbnail: "assets/img/Mulminono/Mulminono.png"
 main_post: false
 order : 1
 ---
+
+#Python #바이브코딩 #멀미방지
+
+<!--more-->
+<br>
+
+<div align="center"><img src="/assets/img/Mulminono/Mulminono03.png" width="80%" height="auto"></div>
+
 <h2> About </h2>
 - 2024.10.10
 - Python

@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "CSE4110 DatabaseSystem"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/CSE4110DatabaseSystem.png"
-preview_file: "_posts/previews/2000-01-01-CSE4110-DatabaseSystem-preview.md"
+thumbnail: "assets/img/CSE4110 DatabaseSystem/CSE4110DatabaseSystem.png"
 main_post: false
 order: 1
 ---
 
+#MySql #C #데이터베이스 #자동차회사
+
+<!--more-->
 <h2> About </h2>
 - 2020 Spring
 - C, MYSql, ERWin 사용

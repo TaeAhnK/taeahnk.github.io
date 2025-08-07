@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "포스트 제목"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/sample.png"
-preview_file: "_posts/previews/2000-01-01-sample-preview.md"
+thumbnail: "assets/sample/sample.png"
 main_post: false
 published: false
 ---
+
+미리보기
+
+<!--more-->
 # 대충 제목
 <img src="/assets/thumbnails/sample.png">
 대충 내용

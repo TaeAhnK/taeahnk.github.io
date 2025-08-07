@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "CoDefence"
-date: 2000-01-01 12:00:00
-thumbnail: "assets/thumbnails/CoDefence.png"
-preview_file: "_posts/previews/2000-01-01-CoDefece.md"
+thumbnail: "assets/img/CoDefence/CoDefence.png"
 main_post: true
 order: 2
 ---
 
+#Unity #타자연습 #디펜스 #2D #개인프로젝트<br>
+화면 위에서 떨어지는 코드를 입력해 바이러스의 침투를 막는 타자 연습 디펜스 게임입니다.
+웹에서 플레이할 수 있습니다.
+
+<!--more-->
 ## Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">

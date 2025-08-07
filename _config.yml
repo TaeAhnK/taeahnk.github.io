@@ -1,8 +1,8 @@
 # Site settings
 title: TaeAhnK's Portfolio
 description: TaeAhnK's Portfolio
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://taeahnk.github.io" # the base hostname & protocol for your site
+baseurl: ""
+url: "https://taeahnk.github.io"
 
 # User settings
 username: TaeAhnK
@@ -12,19 +12,19 @@ github_username:  TaeAhnK
 blog_name: code-in-coffee
 exclude: ['package.json', 'src', 'node_modules', 'vendor']
 
-plugins:
-  - jekyll-paginate
-
-paginate: 20
-paginate_path: "/page:num/"
-permalink: /projects/:title/
-
-exclude:
-  - "_posts/previews/**"
-
+# Markdown
 markdown: kramdown
 kramdown:
   input: GFM
   syntaz_highlighter: rouge
 
+# Google
 google-analytics: G-C39JGSKQ8B
+
+# Project Folder Settings
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+excerpt_separator: "<!--more-->"
