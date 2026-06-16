@@ -1,17 +1,23 @@
 ---
 layout: post
 title: "PiPlant"
-thumbnail: "assets/img/PiPlant/PiPlant.png"
-main_post: true
-order : 2
-published: true
+display_area: projects
+display_order: 20
+thumbnail_type: img
+thumbnail_img: assets\images\projects\PiPlant\PiPlant.png
+thumbnail_vid: ""
+tags:
+  - Unity
+  - Mobile
+  - 2D
+  - Casual
+  - 팀프로젝트
 ---
 
-
-#Unity #모바일 #2D #캐주얼 #팀프로젝트<br>
 멋쟁이사자처럼 로켓단 인턴십 중 타라게임즈와 협업하여 출시를 목표로 진행한 프로젝트입니다. 파이프를 회전해 퍼즐을 푸는 간단한 모바일 캐주얼 게임입니다.
-<!--more-->
-## Demo
+<!-- preview -->
+<div class="print-hide"> 
+<h2>Demo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
   <iframe 
@@ -21,7 +27,7 @@ published: true
     allowfullscreen="true">
   </iframe>
 </div>
-
+</div>
 
 <h2>About</h2>
 
@@ -30,20 +36,19 @@ published: true
 - Unity 6000.0.47f1, C#
 - 멋쟁이사자처럼 로켓단 인턴십 중 타라게임즈와 협업하여 진행한 프로젝트
 - 파이프를 연결해 꽃을 피우는 간단한 모바일 캐주얼 게임
-<!-- - [Github Link](https://github.com/) -->
 
 
 ## Logics
 
 ### 디자이너 편의성을 고려한 Pipe와 Level 팔레트
 <br>
-<div align="center"><img src="/assets/img/PiPlant/PiPlant02.png" width="70%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/PiPlant/PiPlant02.png" width="60%" height="auto"></div>
 
 디자이너와 기획자가 쉽게 파이프 이미지를 적용해보고 스테이지를 구성할 수 있도록 커스텀 에디터를 제작했습니다.
 파이프 종류 추가, 테마 설정, 기믹 추가 등 기획이 심화될수록 에디터의 기능도 추가하여 디자이너가 문제없이 스테이지를 구성할 수 있도록 도왔습니다.
 
 <details markdown="1">
-<summary>자세히</summary>
+<summary class="print-hide">자세히</summary>
 
 **Level Editor 주요 기능**
 - 그리드 사이즈 설정
@@ -57,20 +62,20 @@ published: true
 
 </details>
 
-<div align="center"><img src="/assets/img/PiPlant/PiPlant01.png" width="35%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/PiPlant/PiPlant01.png" width="35%" height="auto"></div>
 
 <br>
 
 ### 다양한 기믹을 위한 GimmickPipe
 <br>
-<div align="center"><img src="/assets/img/PiPlant/PiPlant03.png" width="40%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/PiPlant/PiPlant03.png" width="40%" height="auto"></div>
 
 PiPlant의 핵심 재미 요소는 다양한 기능을 하는 기믹 파이프입니다.
 폭탄 파이프, Lock-Key 파이프, 얼음 파이프를 파훼해 퍼즐을 풀어야 합니다.
 다양한 파이프를 더 효율적으로 유지보수하고, 새 기믹을 더 쉽게 추가하기 위해 `Interface`를 활용한 구조로 `GimmickPipe`를 설계했습니다.
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 PipeData에서 파이프의 기믹을 설정합니다. 
 
@@ -230,13 +235,13 @@ public class BombGimmickPipe : GimmickPipe
 
 ### EventBus를 통한 디커플링
 <br>
-<div align="center"><img src="/assets/img/PiPlant/PiPlant04.png" width="90%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/PiPlant/PiPlant04.png" width="90%" height="auto"></div>
 
 협업 과정에서 특정 파일에서 충돌이 나는 경우가 종종 있었습니다. 특히 주요 로직을 관리하는 `GameManager`에서 UI 담당이 코드를 추가하며 충돌이 잦았습니다. 이를 의존성이 높은 상황으로 파악하고 의존도를 낮춰 충돌을 줄이기 위해 EventBus를 통해 디커플링을 구현했습니다.
 주요 이벤트를 `EventBus`로 구현해 구독하고 알림을 보내는 구조로 수정해 직접 다른 클래스에 접근하지 않고도 상태 변화를 감지해 적절한 행동이 가능하도록 리팩토링했습니다.
 
 <details markdown="1">
-<summary>자세히</summary>
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public static class GameStateEventBus // From GameManager to Pipes or Others

@@ -1,0 +1,25 @@
+{% if include.print_mode and include.project.thumbnail_img %}
+  <a class="project-thumbnail" href="{{ include.project.url | relative_url }}" aria-label="{{ include.project.title }}">
+    <img
+      src="{{ include.project.thumbnail_img | relative_url }}"
+      alt="{{ include.project.title }} thumbnail"
+      loading="lazy">
+  </a>
+{% elsif include.project.thumbnail_type == 'vid' and include.project.thumbnail_vid %}
+  <div class="project-thumbnail project-thumbnail-video">
+    <iframe
+      src="{{ include.project.thumbnail_vid }}"
+      title="{{ include.project.title }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+{% elsif include.project.thumbnail_img %}
+  <a class="project-thumbnail" href="{{ include.project.url | relative_url }}" aria-label="{{ include.project.title }}">
+    <img
+      src="{{ include.project.thumbnail_img | relative_url }}"
+      alt="{{ include.project.title }} thumbnail"
+      loading="lazy">
+  </a>
+{% endif %}

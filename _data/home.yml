@@ -1,0 +1,43 @@
+header:
+  brand: TaeAhnK's Portfolio
+
+hero:
+  eyebrow: online
+  title: TaeAhnK's Portfolio
+  intro: Game Client Developer
+
+about:
+  eyebrow:
+  title: ABOUT
+  name: 김태안
+  summary: C#과 Unity, C++과 언리얼 엔진을 사용해 다양한 게임 프로젝트를 진행했습니다. 파이썬으로는 개인적으로 사용하는 다양한 프로그램을 제작해왔습니다. MySQL과 Bash를 사용해본 경험이 있습니다.
+  tags:
+    - Unity
+    - UnrealEngine
+    - C++
+    - C#
+    - Python
+  links:
+    - title: Github
+      link: "https://github.com/TaeAhnK"
+    - title: Blog
+      link: "https://code-in-coffee.tistory.com/"
+
+projects:
+  eyebrow: 
+  title: PROJECTS
+  description: 
+
+other_projects:
+  eyebrow: 
+  title: OTHER PROJECTS
+  description: 
+
+current_projects:
+  eyebrow:
+  title: CURRENT PROJECTS
+  description:
+
+footer:
+  title:
+  summary: © 2026 TaeAhnK. All rights reserved.

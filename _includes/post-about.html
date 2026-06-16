@@ -1,0 +1,24 @@
+<section class="post-about" aria-labelledby="post-title">
+  <div class="container post-about-layout">
+    {% if page.tags %}
+      <ul class="tag-list post-hero-tags" aria-label="Post tags">
+        {% for tag in page.tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <h1 id="post-title">{{ page.title }}</h1>
+
+    {% if page.project or page.date %}
+      <div class="post-meta-line" aria-label="Post metadata">
+        {% if page.project %}
+          <span>{{ page.project }}</span>
+        {% endif %}
+      {% if page.date %}
+          <span>{{ page.date | date: '%Y.%m.%d' }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>

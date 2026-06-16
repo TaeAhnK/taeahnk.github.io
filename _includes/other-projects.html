@@ -1,21 +1,40 @@
-<div>
-    <h1>Other Projects</h1>
-</div>
-<div class="contents">
-    {% assign other_projects = site.projects | where_exp: "project", "project.main_post != true" %}
-    {% assign sorted_projects = other_projects | sort: "order" | reverse %}
-    {% for project in sorted_projects %}
-    {% unless project.current_project %}
-    <article class="content">
-        <a href="{{ project.url | relative_url }}">
-            <h3>{{ project.title }}</h3>
-            <img src="{{ project.thumbnail | relative_url }}">
-            <div class="excerpt">
-                {{ project.excerpt }}
+{% assign other_projects = site.data.home.other_projects %}
+{% assign displayed_projects = site.projects | where: "display_area", "other-projects" | sort: "display_order" | reverse %}
+{% assign other_projects_count = include.other_projects_count | default: site.index.other_projects_count | default: 4 %}
+{% assign other_projects_columns = include.other_projects_columns | default: site.index.other_projects_columns | default: 3 %}
+
+{% if other_projects_count > 0 and displayed_projects.size > 0 %}
+  <section class="section{% unless include.print_mode %} print-hide{% endunless %}" id="other-projects" aria-labelledby="other-projects-title">
+    <div class="container">
+      <div class="section-heading">
+        {% if other_projects.eyebrow %}
+          <p class="section-kicker">{{ other_projects.eyebrow }}</p>
+        {% endif %}
+        <h2 id="other-projects-title">{{ other_projects.title }}</h2>
+        <p>{{ other_projects.description }}</p>
+      </div>
+
+      <div class="compact-grid" style="--section-columns: {{ other_projects_columns }};">
+        {% for project in displayed_projects limit: other_projects_count %}
+          <article class="compact-card">
+            {% include project-thumbnail.html project=project %}
+            <div class="project-card-body">
+              {% assign project_summary = project.excerpt | strip_html | normalize_whitespace | strip %}
+              <h3>
+                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+              </h3>
+              <p>{{ project_summary | truncate: 88 }}</p>
+              {% if project.tags %}
+                <ul class="tag-list">
+                  {% for tag in project.tags %}
+                    <li>{{ tag }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
-        </a>
-    </article>
-    {% endunless %}
-    {% endfor %}
-</div>
-<br><br>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

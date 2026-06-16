@@ -1,48 +1,50 @@
 ---
 layout: post
 title: "CoDefence"
-thumbnail: "assets/img/CoDefence/CoDefence.png"
-main_post: true
-order: 1
+display_area: projects
+display_order: 10
+thumbnail_type: img
+thumbnail_img: assets\images\projects\CoDefence\CoDefence.png
+thumbnail_vid: ""
+tags:
+  - Unity
+  - 타자연습
+  - 2D
+  - 개인프로젝트
 ---
 
-#Unity #타자연습 #디펜스 #2D #개인프로젝트<br>
 화면 위에서 떨어지는 코드를 입력해 바이러스의 침투를 막는 타자 연습 디펜스 게임입니다.
 웹에서 플레이할 수 있습니다.
+<!-- preview -->
 
-<!--more-->
-## Demo
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
-  <iframe 
-    style="position: absolute; top: 0; left: 50%; width: 90%; height: 90%; transform: translateX(-50%);" 
-    src="https://www.youtube.com/embed/d_d7eyaYCBs" 
-    frameborder="0" 
-    allowfullscreen="true">
-  </iframe>
-</div>
-
-<details>
-    <summary>Web Version을 1920*1080 환경에서 플레이할 수 있습니다. (소리 주의, 전체 화면 권장)</summary>
-    <div style="position: relative; width: 100%; max-width: 1920px; margin: auto; aspect-ratio: 16/10;">
-    <iframe 
-        src="https://taeahnk.github.io/CoDefence/"
-        allowfullscreen
-        scrolling = no
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+<div class="print-hide">
+    <h2>Demo</h2>
+    <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/d_d7eyaYCBs" 
+        frameborder="0" 
+        allowfullscreen="true">
     </iframe>
     </div>
-    run viruskiller3를 입력하면 시작합니다.
-</details>
 
-
+    <details>
+        <summary>Web Version을 1920*1080 환경에서 플레이할 수 있습니다. (소리 주의, 전체 화면 권장)</summary>
+        <div class="demo-game">
+        <iframe 
+            src="https://taeahnk.github.io/CoDefence/"
+            allowfullscreen
+            scrolling = no>
+        </iframe>
+        </div>
+        run viruskiller3를 입력하면 시작합니다.
+    </details>
+    </div>
 <h2>About</h2>
 
 - 2024.11.14 ~ 2024.11.15 (1일, 이후 추가 리팩토링 진행)
 - 1인 프로젝트
 - Unity 2022.3.30f LTS, C#
-- 한컴 타자 연습의 '산성비'처럼 하늘에서 떨어지는 코드를 입력해 바이러스의 침투를 막는 디펜스 게임
-- 의도치 않게 24시간 타임어택으로 진행된 프로젝트
+- 한컴타자연습의 '산성비'처럼 떨어지는 코드를 입력해 바이러스의 침투를 막는 디펜스 게임
 - [Github Link](https://github.com/TaeAhnK/CoDefence)
 
 
@@ -51,15 +53,15 @@ order: 1
 ### 클래스 재정비와 로직 개선
 빠르게 제작한 프로젝트다 보니 기능 구현에 최대한 집중했습니다. 많은 기능이 GameManager에 강하게 결합되어 있고, 서로의 데이터에 직접 접근하며, 하나의 클래스가 여러 책임을 맡는 구조였습니다.
 
-<div align="center"><img src="/assets/img/CoDefence/CoDefence01.png" width="100%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/CoDefence/CoDefence01.png" width="100%" height="auto"></div>
 
 
 리펙토링을 통해 이벤트를 바탕으로 한 구조로 클래스 간의 결합을 낮추고, 각 클래스의 역할을 더욱 명확하게 변경하였습니다. 오브젝트들은 이벤트 버스 GameEvent를 구독하고 트리거하여, 서로의 구현과 변경에 영향을 받지 않도록 했습니다. Word의 관리와 소환을 모두 담당하던 WordSpawner의 역할을 WordPool과 WordSpawner로 분리해 각자의 책임을 명확히 했습니다. 이를 통해 새로운 기능 추가와 유지보수가 쉬워졌습니다.
 
-<div align="center"><img src="/assets/img/CoDefence/CoDefence02.png" width="100%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/CoDefence/CoDefence02.png" width="100%" height="auto"></div>
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 **기존 코드 (일부)**
 ```c#
@@ -163,8 +165,8 @@ public class SoundManager : Singleton<SoundManager>
 ### 상속할 수 있는 Singleton
 모든 `Manager`와 `SubManager`가 가지는 `Singleton` 속성을 상위 클래스로 만들어 코드 중복을 줄이고 새 매니저를 추가할 때 간편하게 구현하도록 변경하였습니다.
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
@@ -213,7 +215,7 @@ public class GameStateUIManager : Singleton<GameStateUIManager> { ... }
 <br>
 
 ### 간편한 패치를 위한 Scriptable Object
-<div align="left"><img src="/assets/img/CoDefence/CoDefence03.png" width="50%" height="auto"></div>
+<div align="left"><img src="/assets/images/projects/CoDefence/CoDefence03.png" width="50%" height="auto"></div>
 
 밸런스 조절을 위한 변수와 단어 목록을 Scriptable Object로 저장하도록 변경하여 Inspector 창에서 간편히 변수를 변경하고 적용할 수 있도록 수정하였습니다.
 <br>
@@ -224,7 +226,9 @@ public class GameStateUIManager : Singleton<GameStateUIManager> { ... }
 Unity의 `String`은 한 번 생성되면 수정이 불가능한 상태로 메모리에 저장됩니다. 따라서, 문자열을 수정할 때마다 새로운 문자열이 생성되고, 이는 메모리 증가와 GC 증가로 이어집니다. 이를 보완하기 위해 가변 버퍼를 사용하는 `StringBuilder`와 문자열을 하나만 저장하고 참조를 사용하는 `Interned String`을 사용해 메모리 낭비를 줄였습니다.
 
 <details markdown="1">
-<summary>자세히</summary>
+<summary class="print-hide">자세히</summary>
+
+<div class="print-hide" markdown="1">
 
 **기존 String 수정 방식**
 ```c#
@@ -244,6 +248,7 @@ public class TypingEffect : MonoBehaviour
     ...
 }
 ```
+</div>
 
 **`StringBuilder` 사용**
 ```c#
@@ -305,8 +310,7 @@ public class WordPool : MonoBehaviour
 ### 정확한 Spawn 범위
 `Word`의 소환 위치가 단어의 길이에 따라 화면을 벗어나는 현상이 있어 초기에는 소환 범위를 보수적으로 잡아 임시 조치를 했습니다. 단어가 많아지면 가장자리에는 단어가 소환되지 않는 것이 노골적으로 보여 어색해 보였고, 문제를 파악하기 위해 Unity UI 좌표계에 대해 조사하고, 오브젝트를 다양한 위치에 배치해 보며 원인을 파악했습니다.
 
-<div align="center"><img src="/assets/img/CoDefence/CoDefence04.png" width="70%" height="auto"></div>
-
+<div align="center"><img src="/assets/images/projects/CoDefence/CoDefence04.png" width="70%" height="auto"></div>
 
 가장 큰 문제는 단어의 길이가 길어져도 UI Box를 넘어가서 출력되고, Box의 Width가 늘어나지는 않았습니다. 정확한 Width를 구하지 못해 Box는 범위 안에 있지만, 글자는 범위를 벗어나는 현상이 발생했습니다.
 
@@ -324,13 +328,7 @@ public class Word : MonoBehaviour
 }
 
 ```
-Word를 초기화할 때 Width도 변경하도록 수정하고, 좌표 계산의 편의성을 위해 화면과 Word의 Anchor를 좌측으로 고정했습니다.
-
-<div align="center"><img src="/assets/img/CoDefence/CoDefence05.png" width="70%" height="auto"></div>
-
-
-정확해진 계산으로 정상 위치에 Spawn 됩니다.
-
+Word를 초기화할 때 Width도 변경하도록 수정하고, 좌표 계산의 편의성을 위해 화면과 Word의 Anchor를 좌측으로 고정해 정상 위치에 Spawn할 수 있었습니다.
 
 ## Epilogue
 

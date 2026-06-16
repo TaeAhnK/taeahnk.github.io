@@ -1,4 +1,39 @@
-<div class="user-details">
-  <h1>{{ site.data.about.user_description_title }}</h1>
-  <p>{{ site.data.about.user_description }}</p>
-</div>
+{% assign about = site.data.home.about %}
+
+<section class="section about-section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-heading about-heading">
+      {% if about.eyebrow %}
+        <p class="section-kicker">{{ about.eyebrow }}</p>
+      {% endif %}
+      <h2 id="about-title">{{ about.title }}</h2>
+    </div>
+
+    <div class="about-card about-panel">
+      <h3>{{ about.name }}</h3>
+
+      <div class="about-panel-copy">
+        <p class="lead">{{ about.summary }}</p>
+      </div>
+      <div class="about-panel-details">
+        {% if about.tags %}
+          <ul class="tag-list" aria-label="Tech stack">
+            {% for tag in about.tags %}
+              <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if about.links %}
+      <div class="link-row about-links print-hide" aria-label="About links">
+        {% for link in about.links %}
+          <a href="{{ link.link | default: link.url }}">
+            {{ link.title | default: link.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

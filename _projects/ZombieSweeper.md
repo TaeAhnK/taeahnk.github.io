@@ -1,19 +1,22 @@
 ---
 layout: post
 title: "ZombieSweeper"
-thumbnail: "assets/img/ZombieSweeper/ZombieSweeper.png"
-main_post: false
-order : 3
+display_area: other-projects
+display_order: 30
+thumbnail_type: img
+thumbnail_img: "assets/images/projects/ZombieSweeper/ZombieSweeper.png"
+thumbnail_vid: ""
+tags:
+  - Unreal 5
+  - 3D
+  - C++
+  - 탈출미로게임
 ---
-
-#UnrealEngine #3D #C++ #탈출게임
-
-<!--more-->
+<!-- preview -->
 ## Demo
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
+<div class="youtube-embed">
   <iframe 
-    style="position: absolute; top: 0; left: 50%; width: 90%; height: 90%; transform: translateX(-50%);" 
     src="https://www.youtube.com/embed/c3KcLugqjks?si=rU3OY2gg_xlz_pZV" 
     frameborder="0" 
     allowfullscreen="true">

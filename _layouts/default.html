@@ -1,38 +1,78 @@
-<!DOCTYPE html>
-<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css">
-<html lang="ko">
-  {% include head.html %}
+<!doctype html>
+<html lang="{{ site.lang | default: 'ko-KR' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" sizes="any">
+    <script>
+      (function () {
+        {% if page.force_light_theme %}
+          return;
+        {% endif %}
+
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+            document.documentElement.dataset.theme = "dark";
+          }
+        } catch (error) {
+          return;
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+    {% if page.extra_css %}
+      <link rel="stylesheet" href="{{ page.extra_css | relative_url }}">
+    {% endif %}
+  </head>
   <body>
-    <header>
-      {% include header.html %}
-    </header>
-    <main>
-      <section id="about">
-        {% include about.html %}
-      </section>
-      <section id="stack">
-        {% include stack.html %}
-      </section>
-      <section id="projects">
-        <hr>
-        {% include projects.html %}
-      </section>
-      <section id="other-projects">
-        <hr>
-        {% include other-projects.html %}
-      </section>
-      <section id="current-project">
-        <hr>
-        {% include current-project.html %}
-      </section>
-      <section id="links">
-        <hr>
-        {% include links.html %}
-      </section>
+    <main class="site-main">
+      {{ content }}
     </main>
-    <footer>
-      {% include footer.html %}
-    </footer>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var toggles = document.querySelectorAll("[data-theme-toggle]");
+
+        function syncToggles() {
+          var isDark = root.dataset.theme === "dark";
+          toggles.forEach(function (toggle) {
+            var label = toggle.querySelector(".theme-toggle-label");
+            toggle.setAttribute("aria-pressed", String(isDark));
+            toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+            if (label) {
+              label.textContent = isDark ? "Light" : "Dark";
+            }
+          });
+        }
+
+        toggles.forEach(function (toggle) {
+          toggle.addEventListener("click", function () {
+            var nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+            if (nextTheme === "dark") {
+              root.dataset.theme = "dark";
+            } else {
+              delete root.dataset.theme;
+            }
+
+            try {
+              localStorage.setItem("theme", nextTheme);
+            } catch (error) {
+            }
+
+            syncToggles();
+          });
+        });
+
+        syncToggles();
+      })();
+    </script>
   </body>
 </html>

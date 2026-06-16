@@ -1,0 +1,111 @@
+---
+layout: default
+title: Print
+description: Print View of softeon-theme
+extra_css: /assets/css/print.css
+force_light_theme: true
+---
+
+{% assign print_projects = site.projects | where: "display_area", "projects" | sort: "display_order" | reverse %}
+{% assign print_other_projects = site.projects | where: "display_area", "other-projects" | sort: "display_order" | reverse %}
+{% assign print_current_projects = site.projects | where: "display_area", "current-projects" | sort: "display_order" | reverse %}
+{% assign print_projects_count = site.print.projects_count | default: 4 %}
+{% assign print_other_projects_count = site.print.other_projects_count | default: 4 %}
+{% assign print_current_projects_count = site.print.current_projects_count | default: 1 %}
+
+<div class="print-view">
+  <section class="print-page print-index" aria-label="Index page">
+    <div class="print-page-inner">
+      {% include header.html %}
+      {% include hero.html %}
+      {% include about.html %}
+      {% include print-links.html %}
+      {% assign print_note = page.print_note | default: site.data.print.note %}
+      {% if print_note %}
+        <p class="print-note">{{ print_note }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if print_projects_count > 0 or print_other_projects_count > 0 or print_current_projects_count > 0 %}
+  <section class="print-posts" aria-label="Project posts">
+    {% for project in print_projects limit: print_projects_count %}
+      <article class="print-page print-post">
+        <div class="container post-container print-page-inner">
+          <p class="section-kicker">Projects</p>
+          <h2>{{ project.title }}</h2>
+          {% include project-thumbnail.html project=project print_mode=true %}
+          {% if project.tags %}
+            <ul class="tag-list">
+              {% for tag in project.tags %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <div class="print-post-content post-content">
+            {% assign content_parts = project.content | split: site.excerpt_separator %}
+            {% if content_parts.size > 1 %}
+              {% assign print_content = content_parts | last %}
+            {% else %}
+              {% assign print_content = project.content %}
+            {% endif %}
+            {{ print_content | replace: '<details open', '<details' | replace: '<details', '<details open' }}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+
+    {% for project in print_other_projects limit: print_other_projects_count %}
+      <article class="print-page print-post">
+        <div class="container post-container print-page-inner">
+          <p class="section-kicker">Other Projects</p>
+          <h2>{{ project.title }}</h2>
+          {% include project-thumbnail.html project=project print_mode=true %}
+          {% if project.tags %}
+            <ul class="tag-list">
+              {% for tag in project.tags %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <div class="print-post-content post-content">
+            {% assign content_parts = project.content | split: site.excerpt_separator %}
+            {% if content_parts.size > 1 %}
+              {% assign print_content = content_parts | last %}
+            {% else %}
+              {% assign print_content = project.content %}
+            {% endif %}
+            {{ print_content | replace: '<details open', '<details' | replace: '<details', '<details open' }}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+
+    {% for project in print_current_projects limit: print_current_projects_count %}
+      <article class="print-page print-post">
+        <div class="container post-container print-page-inner">
+          <p class="section-kicker">Current Projects</p>
+          <h2>{{ project.title }}</h2>
+          {% include project-thumbnail.html project=project print_mode=true %}
+          {% if project.tags %}
+            <ul class="tag-list">
+              {% for tag in project.tags %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <div class="print-post-content post-content">
+            {% assign content_parts = project.content | split: site.excerpt_separator %}
+            {% if content_parts.size > 1 %}
+              {% assign print_content = content_parts | last %}
+            {% else %}
+              {% assign print_content = project.content %}
+            {% endif %}
+            {{ print_content | replace: '<details open', '<details' | replace: '<details', '<details open' }}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+</div>

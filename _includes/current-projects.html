@@ -1,0 +1,43 @@
+{% assign current = site.data.home.current_projects %}
+{% assign current_projects = site.projects | where: "display_area", "current-projects" | sort: "display_order" | reverse %}
+{% assign current_projects_count = include.current_projects_count | default: site.index.current_projects_count | default: 1 %}
+{% assign current_projects_columns = include.current_projects_columns | default: site.index.current_projects_columns | default: 1 %}
+
+{% if current_projects_count > 0 and current_projects.size > 0 %}
+  <section class="section current-section{% unless include.print_mode %} print-hide{% endunless %}" id="current-projects" aria-labelledby="current-projects-title">
+    <div class="container">
+      <div class="section-heading">
+        {% if current.eyebrow %}
+          <p class="section-kicker">{{ current.eyebrow }}</p>
+        {% endif %}
+        <h2 id="current-projects-title">{{ current.title }}</h2>
+        <p>{{ current.description }}</p>
+      </div>
+
+      <div class="current-projects-list" style="--section-columns: {{ current_projects_columns }};">
+        {% for current_project in current_projects limit: current_projects_count %}
+        <article class="current-projects-card">
+          <div class="current-projects-media">
+            {% include project-thumbnail.html project=current_project %}
+            {% if current_project.tags %}
+              <ul class="tag-list">
+                {% for tag in current_project.tags %}
+                  <li>{{ tag }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+          <div class="project-card-body current-projects-body">
+            <h3>
+              <a href="{{ current_project.url | relative_url }}">{{ current_project.title }}</a>
+            </h3>
+            <div class="lead current-project-preview">
+              {{ current_project.excerpt }}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

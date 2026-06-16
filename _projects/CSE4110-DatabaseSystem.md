@@ -1,14 +1,19 @@
 ---
 layout: post
 title: "CSE4110 DatabaseSystem"
-thumbnail: "assets/img/CSE4110 DatabaseSystem/CSE4110DatabaseSystem.png"
-main_post: false
-order: 2
+display_area: other-projects
+display_order: 10
+thumbnail_type: img
+thumbnail_img: assets\images\projects\CSE4110 DatabaseSystem\CSE4110DatabaseSystem.png
+thumbnail_vid: ""
+tags:
+  - MySQL
+  - C
+  - Database
+  - 자동차회사
 ---
 
-#MySql #C #데이터베이스 #자동차회사
-
-<!--more-->
+<!-- preview -->
 <h2> About </h2>
 - 2020 Spring
 - C, MYSql, ERWin 사용
@@ -22,13 +27,13 @@ order: 2
 
 ## 주요 로직
 ### ER Diagram
-<div align="center"><img src="\assets\img\CSE4110 DatabaseSystem\CSE4110DatabaseSystem01.png" width="70%" height="auto"></div>
+<div align="center"><img src="\assets\images\projects\CSE4110 DatabaseSystem\CSE4110DatabaseSystem01.png" width="70%" height="auto"></div>
 
 ### Logical Schema
-<div align="center"><img src="\assets\img\CSE4110 DatabaseSystem\CSE4110DatabaseSystem02.png" width="95%" height="auto"></div>
+<div align="center"><img src="\assets\images\projects\CSE4110 DatabaseSystem\CSE4110DatabaseSystem02.png" width="95%" height="auto"></div>
 
 ### Physical Schema
-<div align="center"><img src="\assets\img\CSE4110 DatabaseSystem\CSE4110DatabaseSystem03.png" width="95%" height="auto"></div>
+<div align="center"><img src="\assets\images\projects\CSE4110 DatabaseSystem\CSE4110DatabaseSystem03.png" width="95%" height="auto"></div>
 
 
 ## 보고서

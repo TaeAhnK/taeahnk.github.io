@@ -1,26 +1,35 @@
 ---
 layout: post
 title: "DeadlineDuel"
-thumbnail: "assets/img/DeadlineDuel/DeadlineDuel.png"
-main_post: true
-published: true
-order : 4
+display_area: projects
+display_order: 40
+thumbnail_type: img
+thumbnail_img: assets\images\projects\DeadlineDuel\DeadlineDuel.png
+thumbnail_vid: ""
+tags:
+  - Unity
+  - 3D
+  - Multiplayer
+  - 액션
+  - 팀프로젝트
+  - 보스
 ---
 
-#Unity #3D #액션 #레이드 #팀프로젝트 #보스<br>
 3명이 진행한 팀 프로젝트입니다. 두 플레이어가 서로 다른 보스 몬스터를 잡으며 경쟁하는 경쟁형 액션 PvE 게임입니다. 
 
-<!--more-->
-## Demo
+<!-- preview -->
+
+<div class="print-hide" markdown="1">
+<h2>Demo</h2>
 ### 중간발표 자료
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
-  <iframe 
-    style="position: absolute; top: 0; left: 50%; width: 90%; height: 90%; transform: translateX(-50%);" 
+<div class="youtube-embed">
+<iframe 
     src="https://www.youtube.com/embed/FdjHvWc55Yc?si=fGx_V1d_maLcXUkG&amp;start=42" 
     frameborder="0" 
     allowfullscreen="true">
-  </iframe>
+</iframe>
+</div>
 </div>
 
 <h2> About </h2>
@@ -31,25 +40,28 @@ order : 4
 - Unity 2022.3.58f LTS, C#, Unity NetCode
 - 두 플레이어가 서로를 방해하며 보스 타임 어택을 진행하는 3D 액션 게임
 - [Github Link](https://github.com/TaeAhnK/DeadlineDuel)
+<div markdown="1"  class="print-hide">
 - <details>
-    <summary>발표 자료 (<a href="https://docs.google.com/presentation/d/e/2PACX-1vSaZUwtZscl0152e5SGPeCluwjjVj191HcVxrvD0nOSuG_aQ4wEIiUHCpGiaZyZPZrOyfz5wm2cEmBQ/pub?start=false&loop=false&delayms=60000">Google Slide</a>)</summary>
+    <summary class="print-hide">발표 자료 (<a href="https://docs.google.com/presentation/d/e/2PACX-1vSaZUwtZscl0152e5SGPeCluwjjVj191HcVxrvD0nOSuG_aQ4wEIiUHCpGiaZyZPZrOyfz5wm2cEmBQ/pub?start=false&loop=false&delayms=60000">Google Slide</a>)</summary>
+    <div class="print-hide">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSaZUwtZscl0152e5SGPeCluwjjVj191HcVxrvD0nOSuG_aQ4wEIiUHCpGiaZyZPZrOyfz5wm2cEmBQ/pubembed?start=true&loop=false&delayms=60000" frameborder="0" width="800" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
     </details>
-
+</div>
 
 ## Logics
 ### NetCode를 활용한 멀티 플레이
-이번 프로젝트에서는 NetCode를 활용해 멀티 플레이를 구현하였습니다. <br>
-보스 몬스터의 대부분의 로직은 `Server(Host)`에서 처리하고, 클라이언트는 시각적 효과만을 보여줍니다.
 
-<div align="center"><img src="/assets/img/DeadlineDuel/DeadlineDuel01.png" width="70%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/DeadlineDuel/DeadlineDuel01.png" width="65%" height="auto"></div>
+
+이번 프로젝트에서는 NetCode를 활용해 멀티 플레이를 구현하였습니다. 보스 몬스터의 대부분의 로직은 `Server(Host)`에서 처리하고, 클라이언트는 시각적 효과만을 보여줍니다.
 
 `NavMesh`를 사용해 `Server`의 보스가 이동하면, `Network Transform`을 통해 `Client`에서 이를 동기화합니다. 
 애니메이션은 `Network Animator`를 사용해 동기화합니다.<br>
 `CurrentState`, `Stat`과 같은 데이터는 `Network Variable`로 설정해 추가적인 과정 없이 값이 변하면 자동으로 동기화되도록 설정했습니다.<br>
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1"  class="print-hide">
+<summary class="print-hide">자세히</summary>
 `StateMachine`과 `State`, `Damage`등 주요 로직은 `IsServer`인 경우에만 동작합니다.
 
 ```c#
@@ -92,13 +104,15 @@ public class BossState : BossBaseState
 ### FSM을 활용한 상태 전환
 보스의 행동 양상을 기획하고, 이에 맞게 Finite State Machine을 구현하여 보스의 행동 전반을 관리했습니다.
 
-<div align="center"><img src="/assets/img/DeadlineDuel/DeadlineDuel02.png" width="65%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/DeadlineDuel/DeadlineDuel02.png" width="65%" height="auto"></div>
 
 보스 몬스터는 Idle 상태에서 공격 대상을 탐색하고, 범위 안에 대상이 있으면 공격, 없으면 이동합니다. 어떤 상태이든 체력이 0이 되면 Death 상태로 돌입합니다.
 
 <details markdown="1">
-<summary>자세히</summary>
+<summary class="print-hide">자세히</summary>
 기본적인 StateMachine과 State를 구현한 뒤, 이를 상속 받는 BossStateMachine을 구현했습니다. 대부분의 로직은 Server에서 처리하도록 설정하고, State를 Byte로 저장해 네트워크 전송량을 줄였습니다.
+
+<div class="print-hide"  markdown="1">
 
 ```c#
 public abstract class StateMachine : NetworkBehaviour
@@ -196,7 +210,7 @@ public class BossIdleState : BossBaseState
     public override void Exit() { }    
 }
 ```
-
+</div>
 </details>
 
 <br>
@@ -204,10 +218,10 @@ public class BossIdleState : BossBaseState
 ### 스킬 구현
 <br>
 <div align="center">
-    <img src="/assets/img/DeadlineDuel/DeadlineDuel04.gif" width="40%" height="auto" style="border-top: 1px solid black;">
-    <img src="/assets/img/DeadlineDuel/DeadlineDuel05.gif" width="40%" height="auto" style="border-top: 1px solid black;">
-    <img src="/assets/img/DeadlineDuel/DeadlineDuel06.gif" width="40%" height="auto" style="border-top: 1px solid black;">
-    <img src="/assets/img/DeadlineDuel/DeadlineDuel07.gif" width="40%" height="auto" style="border-top: 1px solid black;">
+    <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel04.gif" width="40%" height="auto" style="border-top: 1px solid black;">
+    <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel05.gif" width="40%" height="auto" style="border-top: 1px solid black;">
+    <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel06.gif" width="40%" height="auto" style="border-top: 1px solid black;">
+    <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel07.gif" width="40%" height="auto" style="border-top: 1px solid black;">
 </div>
 
 
@@ -216,11 +230,11 @@ public class BossIdleState : BossBaseState
 
 <br>
 
-<div align="center"><img src="/assets/img/DeadlineDuel/DeadlineDuel03.png" width="70%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/DeadlineDuel/DeadlineDuel03.png" width="70%" height="auto"></div>
 
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public class BossSkill_Sample : BossSkill
@@ -269,7 +283,6 @@ public class BossSkill_Sample : BossSkill
 ### Network Variable의 동기화 타이밍
 `BossSkill_TargetShoot`은 플레이어의 현재 위치에 3번 레이저 공격을 하는 스킬입니다.
 레이저가 떨어질 위치를 한 번 보여주고, 레이저 공격을 가합니다.
-<img>
 그러나 특정 상황에서 레이저의 인디케이터 위치가 보스 위치(`0,0,0`)로 설정되는 문제가 발생했습니다.
 
 #### 문제 조건 분석
@@ -290,8 +303,8 @@ public class BossSkill_Sample : BossSkill
 7. `Collider` 재생
 8. 2~7을 3번 반복
 
-<details markdown="1">
-<summary>코드로 보기</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">코드로 보기</summary>
 
 ```c#
 private NetworkVariable<Vector3> targetPos;
@@ -330,7 +343,7 @@ Unity NetCode의 `Network Variable`은 값이 변경되면, NetCode의 업데이
 NetworkVariable의 동기화 타이밍의 신뢰도가 떨어지므로 명시적으로 값을 설정하도록 변경하였습니다.
 
 <details markdown="1">
-<summary>코드로 보기</summary>
+<summary class="print-hide">코드로 보기</summary>
 
 ```c#
 private Vector3 targetPos;
@@ -364,8 +377,8 @@ private void SyncTargetPosClientRpc(Vector3 pos)
 </details>
 
 #### 결과
-<div align="center">
-    <img src="/assets/img/DeadlineDuel/DeadlineDuel05.gif" width="60%" height="auto" style="border-top: 2px solid black;border-bottom: 1px solid black;">
+<div align="center" class="print-hide">
+    <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel05.gif" width="60%" height="auto" style="border-top: 2px solid black;border-bottom: 1px solid black;">
 </div>
 `targetPos`의 동기화 타이밍이 보장되어 기존의 인디케이터 위치 에러가 해결되었습니다.
 

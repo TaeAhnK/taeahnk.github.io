@@ -1,28 +1,35 @@
 ---
 layout: post
 title: "SproutPang"
-thumbnail: "assets/img/SproutPang/SproutPang.png"
-main_post: true
-order: 3
+display_area: projects
+display_order: 30
+thumbnail_type: img
+thumbnail_img: "assets/images/projects/SproutPang/SproutPang.png"
+thumbnail_vid: ""
+tags:
+  - Unity
+  - Match3
+  - 2D
+  - 개인프로젝트
 ---
 
-#Unity #Match3 #2D #개인프로젝트<br>
 꼬꼬가 되어 냐옹의 눈을 피해 작물을 훔치는 Match3 게임입니다.
 웹에서 플레이할 수 있습니다.
 
-<!--more-->
-## Demo
+<!-- preview -->
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
+<div class="print-hide">
+<h2>Demo</h2>
+
+<div class="youtube-embed">
   <iframe 
-    style="position: absolute; top: 0; left: 50%; width: 90%; height: 90%; transform: translateX(-50%);" 
     src="https://www.youtube.com/embed/F2qwxJidN-w" 
     frameborder="0" 
     allowfullscreen="true">
   </iframe>
 </div>
 <details>
-    <summary>Web Version을 1920*1080 환경에서 플레이할 수 있습니다. (소리 주의)</summary>
+    <summary class="print-hide">Web Version을 1920*1080 환경에서 플레이할 수 있습니다. (소리 주의)</summary>
     <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%;">
         <iframe 
             style="position: absolute; top: 0; left: 0; width: 140%; height: 140%; border: none; transform: scale(0.7); transform-origin: 0 0;" 
@@ -33,6 +40,7 @@ order: 3
         </iframe>
     </div>
 </details>
+</div>
 
 <h2> About </h2>
 
@@ -41,19 +49,18 @@ order: 3
 - Unity 2022.3.30f LTS, C#
 - 간결하고 단순한 2D Match-3 게임에 "냐옹의 감시를 피해 작물을 훔친다"는<br>요소를 넣어 재미와 스릴을 추가했습니다.
 - 멋쟁이사자처럼 유니티 게임스쿨 1기 자체 대회 출품 (53명 중 6등)
-- <details><summary>유니티 게임스쿨 홍보 자료로 사용되었습니다.</summary><img src="/assets/img/SproutPang/SproutPang01.png" width="30%" height="auto"></details>
+- <details><summary>유니티 게임스쿨 홍보 자료로 사용되었습니다.</summary><img src="/assets/images/projects/SproutPang/SproutPang01.png" width="30%" height="auto" class="print-hide"></details>
 - [Github Link](https://github.com/TaeAhnK/SproutPang)
-
-<br>
 
 ## Logics
 ### Observer Pattern으로 게임 페이즈 관리하기
-<div align="center"><img src="/assets/img/SproutPang/SproutPang02.png" width="80%" height="auto"></div>
 
 게임의 상태를 `Playing`, `Caught`, `GameOver`의 세 가지 페이즈로 구분하면 페이즈에 따라 게임 로직, UI, 사운드 등의 관리를 효율적으로 할 수 있다고 생각했습니다. 이를 바탕으로 GameManager가 페이즈를 변경하면, Observer Pattern을 활용해 하위 매니저에 알리고, 각 하위 매니저가 페이즈에 따른 동작을 수행하는 구조를 설계하였습니다. Observer Pattern을 활용한 구조로 하위 매니저를 확장하기에 용이하고, 페이즈 변화를 매번 확인하는 것이 아닌 알림으로 받아 불필요한 연산을 줄였습니다.
 
+<div align="center"><img src="/assets/images/projects/SproutPang/SproutPang02.png" width="80%" height="auto"></div>
+
 <details markdown="1">
-<summary>자세히</summary>
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public class GameManager : MonoBehaviour
@@ -110,8 +117,8 @@ public abstract class SubManager<T> : MonoBehaviour where T : MonoBehaviour
 ### Singleton을 활용한 GameManager
 GameManager와 SubManager는 Singleton 패턴을 사용하였습니다. 이를 통해 다양한 곳에서 Global하게 접근할 수 있고, 유일해야 하는 매니저가 단 하나 존재함을 보장합니다.
 또한, 기능 단위로 SubManager를 구성하여 추후 기능을 확장할 때 용이하게 하였습니다. (예: SoundManager를 통한 효과음의 볼륨 일괄 조정)
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1"  class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public class GameManager : MonoBehaviour
@@ -178,12 +185,12 @@ public abstract class SubManager<T> : MonoBehaviour where T : MonoBehaviour
 <br>
 
 ### Generic을 활용한 Grid
-<div align="center"><img src="/assets/img/SproutPang/SproutPang03.png" width="50%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/SproutPang/SproutPang03.png" width="50%" height="auto"></div>
 
 세부 기획을 완성하기 전, 프로토타입을 제작하기 위해 Grid를 먼저 구현하였습니다. Grid의 내용물이 정해지지 않은 상태에서 쉽게 확장하기 위해 제네릭을 사용해 유연한 Grid를 제작했고, 덕분에 기획을 완성하고도 큰 수정 없이 Grid를 적용할 수 있었습니다.
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public class Match3Grid<T> where T : MonoBehaviour
@@ -211,8 +218,8 @@ public class Match3Grid<T> where T : MonoBehaviour
 ### DFS를 통한 Grid 탐색
 Match3의 핵심 메커니즘인 게임 종료 조건 검사(더 이상 수확할 작물이 없음)와 작물 수확 조건 검사(3개 이상의 작물이 연결되어 있는지)는 DFS를 통한 Grid 탐색으로 구현했습니다. 최적의 해를 찾는 것이 아닌, 한 가지의 방법이라도 존재하는 지를 찾는 문제이므로 BFS보다는 DFS를 사용하였고, 이를 통해 BFS보다 적은 평균 탐색 횟수로 Grid에서 적절한 탐색을 수행합니다.
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public class Match3 : MonoBehaviour
@@ -326,7 +333,6 @@ public class Match3 : MonoBehaviour
 
 </details>
 
-<br>
 
 ## Optimization
 픽셀아트와 단순한 로직을 사용해 성능은 차고 넘치지만, 그럼에도 최적화가 가능하다면 시도해 봐야 한다고 생각해 추가 최적화 작업을 시도했습니다.
@@ -335,8 +341,8 @@ public class Match3 : MonoBehaviour
 Vegetable과 Vegetable이 터질 때 생성되는 파티클은 수많은 생성과 삭제를 반복합니다. 이는 비싼 `Instantiate` 연산과 GC 호출로 이어져 성능에 영향을 줍니다.
 `ObjectPool`을 사용해 생성과 삭제가 아닌 대여와 반납 방식으로 성능을 향상시켰습니다.
 
-<details markdown="1">
-<summary>자세히</summary>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
 
 ```c#
 public class ObjectPool
@@ -420,9 +426,9 @@ Profiler 확인 결과, 유의미한 성능의 차이는 일어나지는 않았�
 ### 간단한 사운드 최적화
 SproutPang은 4개의 효과음과 2개의 BGM을 사용합니다. 유니티에서 제공하는 기본 기능을 사용해 불필요한 3D 효과를 해제하고 압축 해제 관련 설정을 사용해 오디오 메모리 사용량을 낮췄습니다.
 
-<details markdown="1">
-<summary>자세히</summary>
-<div align="center"><img src="/assets/img/SproutPang/SproutPang04.png" width="60%" height="auto"></div>
+<details markdown="1" class="print-hide">
+<summary class="print-hide">자세히</summary>
+<div align="center"><img src="/assets/images/projects/SproutPang/SproutPang04.png" width="60%" height="auto"></div>
 효과음은 다음의 설정을 통해 최적화를 진행했습니다.
 
 - Force To Mono : 입체 음향을 사용하는 것이 아니므로 단일 채널 사운드를 사용했습니다.
@@ -430,7 +436,7 @@ SproutPang은 4개의 효과음과 2개의 BGM을 사용합니다. 유니티에�
 - Decompress On Load : 메모리를 조금 더 사용하지만 미리 소리를 압축 해제해 놓습니다. 효과음은 용량이 작아 사용했습니다.
 - 압축 포맷 : Vorbis
 
-<div align="center"><img src="/assets/img/SproutPang/SproutPang05.png" width="60%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/SproutPang/SproutPang05.png" width="60%" height="auto"></div>
 BGM은 다음의 설정을 사용했습니다.
 - Force To Mono
 - Ambisonic
@@ -439,7 +445,7 @@ BGM은 다음의 설정을 사용했습니다.
 
 </details>
 
-<div align="center"><img src="/assets/img/SproutPang/SproutPang06.png" width="80%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/SproutPang/SproutPang06.png" width="80%" height="auto"></div>
 Profiler 확인 결과 오디오 메모리가 27.9MB에서 1.9MB로 약 93% 줄었습니다.
 
 <br>

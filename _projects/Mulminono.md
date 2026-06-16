@@ -1,18 +1,21 @@
 ---
 layout: post
 title: "Mulminono"
-thumbnail: "assets/img/Mulminono/Mulminono.png"
-main_post: false
-order : 1
-published: false
+display_area: hide
+display_order: 10
+thumbnail_type: img
+thumbnail_img: assets\images\projects\Mulminono\Mulminono.png
+thumbnail_vid: ""
+tags:
+  - Python
+  - VibeCoded
+  - 멀미방지
 ---
 
-#Python #바이브코딩 #멀미방지
-
-<!--more-->
+<!-- preview -->
 <br>
 
-<div align="center"><img src="/assets/img/Mulminono/Mulminono03.png" width="80%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/Mulminono/Mulminono03.png" width="80%" height="auto"></div>
 
 <h2> About </h2>
 - 2024.10.10
@@ -24,12 +27,12 @@ published: false
 ## 구현 목표
 - 아이폰의 '차량 모션 큐' 기능처럼, 스크린에 점이나 포스트잇을 붙여 3D 멀미를 예방할 수 있다는 정보가 있습니다.
 - 번거롭게 포스트잇을 붙이는 대신, 프로그램으로 화면에 사각형을 그려 포스트잇의 역할을 하도록 하였습니다.
-- <details><summary></summary><div align="left"><img src="/assets/img/Mulminono/Mulminono01.png" width="40%" height="auto"></div></details>
+- <details><summary></summary><div align="left"><img src="/assets/images/projects/Mulminono/Mulminono01.png" width="40%" height="auto"></div></details>
 
 
 ## 구현 결과
 
-<div align="left"><img src="/assets/img/Mulminono/Mulminono02.png" width="30%" height="auto"></div>
+<div align="left"><img src="/assets/images/projects/Mulminono/Mulminono02.png" width="30%" height="auto"></div>
 
 Python의 tkinter를 사용한 프로토타입 코드를 바탕으로, 디테일을 추가해 사각형을 그리는 기능을 완성했습니다.   
 이후, 개인적으로 사용하며 필요한 기능을 추가하였습니다.
@@ -47,7 +50,7 @@ Python의 tkinter를 사용한 프로토타입 코드를 바탕으로, 디테일
 
 <br>
 
-<div align="center"><img src="/assets/img/Mulminono/Mulminono03.png" width="60%" height="auto"></div>
+<div align="center"><img src="/assets/images/projects/Mulminono/Mulminono03.png" width="60%" height="auto"></div>
 
 
 ## 개발 일지

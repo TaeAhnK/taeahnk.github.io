@@ -1,0 +1,23 @@
+{% assign hero = site.data.home.hero %}
+
+<section class="site-hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      {% if hero.eyebrow %}
+        <p class="eyebrow">{{ hero.eyebrow }}</p>
+      {% endif %}
+      <h1 id="hero-title">{{ hero.title }}</h1>
+      <p class="hero-intro">{{ hero.intro }}</p>
+
+      {% if hero.actions %}
+        <div class="hero-actions" aria-label="Primary links">
+          {% for action in hero.actions %}
+            <a class="button button-{{ action.style | default: 'secondary' }}" href="{{ action.url }}">
+              {{ action.label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

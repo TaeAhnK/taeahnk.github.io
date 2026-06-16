@@ -1,19 +1,40 @@
-<div>
-    <h1>Projects</h1>
-</div>
-<div class="contents">
-    {% assign main_projects = site.projects | where_exp: "project", "project.main_post" %}
-    {% assign sorted_projects = main_projects | sort: "order" | reverse %}
-    {% for project in sorted_projects %}
-    <article class="content">
-        <a href="{{ project.url | relative_url }}">
-            <h2>{{ project.title }}</h2>
-            <img src="{{ project.thumbnail | relative_url }}">
-            <div class="excerpt">
-                    {{ project.excerpt }}
+{% assign projects = site.data.home.projects %}
+{% assign displayed_projects = site.projects | where: "display_area", "projects" | sort: "display_order" | reverse %}
+{% assign projects_count = include.projects_count | default: site.index.projects_count | default: 4 %}
+{% assign projects_columns = include.projects_columns | default: site.index.projects_columns | default: 2 %}
+
+{% if projects_count > 0 and displayed_projects.size > 0 %}
+  <section class="section{% unless include.print_mode %} print-hide{% endunless %}" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-heading">
+        {% if projects.eyebrow %}
+          <p class="section-kicker">{{ projects.eyebrow }}</p>
+        {% endif %}
+        <h2 id="projects-title">{{ projects.title }}</h2>
+        <p>{{ projects.description }}</p>
+      </div>
+
+      <div class="project-grid" style="--section-columns: {{ projects_columns }};">
+        {% for project in displayed_projects limit: projects_count %}
+          <article class="project-card">
+            {% include project-thumbnail.html project=project %}
+            <div class="project-card-body">
+              {% assign project_summary = project.excerpt | strip_html | normalize_whitespace | strip %}
+              <h3>
+                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+              </h3>
+              <p>{{ project_summary | truncate: 110 }}</p>
+              {% if project.tags %}
+                <ul class="tag-list">
+                  {% for tag in project.tags %}
+                    <li>{{ tag }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
-        </a>
-    </article>
-    {% endfor %}
-</div>
-<br><br>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

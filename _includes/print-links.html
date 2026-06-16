@@ -1,0 +1,13 @@
+{% assign print_links = site.data.print.links %}
+
+<div class="print-links" aria-label="Print links">
+  {% if print_links %}
+    {% for link in print_links %}
+      {% assign link_url = link.link | default: link.url %}
+      <a class="about-card" href="{{ link_url }}">
+        <span>{{ link.title | default: link.label }}</span>
+        <span class="print-link-url">{{ link_url }}</span>
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>

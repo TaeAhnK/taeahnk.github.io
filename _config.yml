@@ -1,30 +1,26 @@
-# Site settings
 title: TaeAhnK's Portfolio
-description: TaeAhnK's Portfolio
-baseurl: ""
+description: 게임 클라이언트 개발자 김태안의 포트폴리오입니다.
+lang: ko-KR
 url: "https://taeahnk.github.io"
+baseurl: ""
 
-# User settings
-username: TaeAhnK
-user_title: Software Engineer
-email: tenny0124@naver.com
-github_username:  TaeAhnK
-blog_name: code-in-coffee
-exclude: ['package.json', 'src', 'node_modules', 'vendor']
+excerpt_separator: "<!-- preview -->"
 
-# Markdown
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntaz_highlighter: rouge
-
-# Google
-google-analytics: G-C39JGSKQ8B
-
-# Project Folder Settings
 collections:
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /projects/:name/
 
-excerpt_separator: "<!--more-->"
+index:
+  projects_count: 4
+  other_projects_count: 3
+  current_projects_count: 1
+  
+  projects_columns: 2
+  other_projects_columns: 3
+  current_projects_columns: 1
+
+print:
+  projects_count: 4
+  other_projects_count: 0
+  current_projects_count: 0

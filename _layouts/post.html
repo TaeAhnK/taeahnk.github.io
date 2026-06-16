@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="ko">
-  {% include head.html %}
-  <body class="post">
-    {% include post-header.html %}
-    <section id="post">
-        {{content | split: '<!--more-->' | last}}
-    </section>
-    {% include footer.html %}
-  </body>
-</html>
+---
+layout: default
+---
+
+{% include post-header.html %}
+{% include post-about.html %}
+
+<article class="post-content">
+  <div class="container post-container">
+    {% assign content_parts = content | split: site.excerpt_separator %}
+    {% if content_parts.size > 1 %}
+      {{ content_parts | last }}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+</article>
+
+{% include footer.html %}

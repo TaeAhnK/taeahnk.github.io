@@ -1,19 +1,22 @@
 ---
 layout: post
 title: "RoomGenerator"
-thumbnail: "assets/img/RoomGenerator/RoomGenerator.png"
-main_post: false
-order : 2
+display_area: other-projects
+display_order: 20
+thumbnail_type: img
+thumbnail_img: "assets/images/projects/RoomGenerator/RoomGenerator.png"
+thumbnail_vid: ""
+tags:
+  - Unreal 5
+  - Plugin
+  - 맵_자동생성
 ---
 
-#UnrealEngine #Plugin #맵_자동생성
-
-<!--more-->
+<!-- preview -->
 ## Demo
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
+<div class="youtube-embed">
   <iframe 
-    style="position: absolute; top: 0; left: 50%; width: 90%; height: 90%; transform: translateX(-50%);" 
     src="https://www.youtube.com/embed/--yLTI75p5o?si=9ZKbl74EDjVA0Ytg" 
     frameborder="0" 
     allowfullscreen="true">

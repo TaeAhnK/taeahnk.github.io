@@ -1,16 +1,22 @@
 ---
 layout: post
-title: "포스트 제목"
-thumbnail: "assets/sample/sample.png"
-main_post: false
-published: false
+title: "Sample"
+display_area: hide
+display_order: 20
+thumbnail_type: img
+thumbnail_img: "assets/images/projects/thumbnail_sample.png"
+thumbnail_vid: ""
+tags:
+  - Tag1
+  - Tag2
+  - Tag3
 ---
 
 미리보기
 
-<!--more-->
+<!-- preview -->
 # 대충 제목
-<img src="/assets/thumbnails/sample.png">
+<img src="assets\images\projects\thumbnail_sample.png">
 대충 내용
 
 - 대충 리스트
