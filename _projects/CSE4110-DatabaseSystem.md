@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CSE4110 DatabaseSystem"
+title: "CSE4110DatabaseSystem"
 display_area: other-projects
 display_order: 10
 thumbnail_type: img

@@ -104,7 +104,8 @@
 }
 
 .print-index .about-panel > h3 {
-  font-size: 18pt;
+  margin-bottom: 0;
+  font-size: 27pt;
 }
 
 .print-index .about-panel .lead {
@@ -153,6 +154,7 @@
   margin: 12px auto 0;
   color: var(--accent);
   font-size: 9pt;
+  font-weight: 700;
   line-height: 1.5;
   text-align: center;
 }
@@ -205,7 +207,7 @@
 }
 
 .print-post-content code {
-  font-size: 9pt;
+  font-size: 8pt;
 }
 
 .print-post-content ul,

@@ -1,5 +1,128 @@
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonoplexWide";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-wide/MonoplexKRWide-Text.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard/Pretendard-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
+  --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Space Grotesk", "MonoplexWide", "Pretendard", sans-serif;
+  --font-tag: "Space Grotesk", "MonoplexWide", "Pretendard", sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
   --bg: #fef7ff;
   --surface: #ffffff;
   --surface-muted: #f3ebfa;
@@ -60,7 +183,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
 }
 
@@ -109,7 +232,7 @@ a {
 
 .site-brand {
   color: var(--accent);
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -133,7 +256,7 @@ a {
   padding: 8px 14px;
   background: var(--surface);
   color: var(--text);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -159,7 +282,7 @@ a {
   background: var(--surface);
   color: var(--text);
   cursor: pointer;
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -503,7 +626,7 @@ html[data-theme="dark"] .site-footer {
 .section-kicker {
   margin: 0 0 16px;
   color: var(--secondary);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -536,15 +659,17 @@ html[data-theme="dark"] .site-footer {
 h1,
 h2,
 h3,
+h4,
 p {
   overflow-wrap: anywhere;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: var(--text);
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -581,6 +706,7 @@ h3 {
 .hero-intro {
   max-width: 700px;
   margin: 24px auto 0;
+  font-family: "Space Grotesk", var(--font-body);
 }
 
 .hero-actions,
@@ -603,7 +729,7 @@ h3 {
   padding: 10px 18px;
   background: var(--surface);
   color: var(--text);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -694,6 +820,8 @@ h3 {
 
 .about-panel > h3 {
   grid-column: 1 / -1;
+  margin-bottom: 28px;
+  font-size: 44px;
 }
 
 .about-panel .section-kicker {
@@ -777,7 +905,7 @@ h3 {
   padding: 5px 10px;
   background: var(--accent-soft);
   color: #25005a;
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-tag);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -916,6 +1044,7 @@ h3 {
   min-width: 0;
   flex-direction: column;
   justify-content: flex-start;
+  padding-block: 28px;
 }
 
 .current-projects-body .lead {
@@ -937,6 +1066,7 @@ h3 {
 .current-project-preview ul,
 .current-project-preview ol {
   padding-left: 1.25em;
+  margin-top: 0.35em;
   margin-bottom: 0;
 }
 
@@ -946,7 +1076,8 @@ h3 {
 
 .current-project-preview a {
   color: var(--accent);
-  font-weight: 700;
+  font-weight: inherit;
+  text-decoration: none;
 }
 
 .site-footer {
@@ -967,7 +1098,7 @@ h3 {
 .site-footer strong {
   display: block;
   color: var(--text);
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
 }
 
@@ -997,7 +1128,7 @@ h3 {
   align-items: center;
   gap: 8px;
   color: var(--accent);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1053,7 +1184,7 @@ h3 {
   gap: 10px 18px;
   margin-bottom: 40px;
   color: var(--muted-soft);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1106,7 +1237,7 @@ h3 {
 .post-meta span {
   display: block;
   color: var(--muted-soft);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-code);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1167,7 +1298,8 @@ h3 {
 
 .post-content a {
   color: var(--accent);
-  font-weight: 700;
+  font-weight: inherit;
+  text-decoration: none;
 }
 
 .post-content code {
@@ -1176,8 +1308,8 @@ h3 {
   padding: 2px 5px;
   background: #fdfbff;
   color: var(--accent);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.92em;
+  font-family: var(--font-code);
+  font-size: 0.85em;
 }
 
 .post-content pre {
@@ -1246,6 +1378,7 @@ h3 {
   padding: 0;
   background: transparent;
   color: inherit;
+  font-size: inherit;
 }
 
 @media (max-width: 820px) {
