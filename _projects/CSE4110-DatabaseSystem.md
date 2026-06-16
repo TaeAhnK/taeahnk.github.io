@@ -4,7 +4,7 @@ title: "CSE4110 DatabaseSystem"
 display_area: other-projects
 display_order: 10
 thumbnail_type: img
-thumbnail_img: assets\images\projects\CSE4110 DatabaseSystem\CSE4110DatabaseSystem.png
+thumbnail_img: "assets/images/projects/CSE4110 DatabaseSystem/CSE4110DatabaseSystem.png"
 thumbnail_vid: ""
 tags:
   - MySQL

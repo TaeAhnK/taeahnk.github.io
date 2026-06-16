@@ -4,7 +4,7 @@ title: "PiPlant"
 display_area: projects
 display_order: 20
 thumbnail_type: img
-thumbnail_img: assets\images\projects\PiPlant\PiPlant.png
+thumbnail_img: "assets/images/projects/PiPlant/PiPlant.png"
 thumbnail_vid: ""
 tags:
   - Unity

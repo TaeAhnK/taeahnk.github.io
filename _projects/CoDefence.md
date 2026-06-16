@@ -4,7 +4,7 @@ title: "CoDefence"
 display_area: projects
 display_order: 10
 thumbnail_type: img
-thumbnail_img: assets\images\projects\CoDefence\CoDefence.png
+thumbnail_img: "assets/images/projects/CoDefence/CoDefence.png"
 thumbnail_vid: ""
 tags:
   - Unity

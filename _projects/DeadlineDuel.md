@@ -4,7 +4,7 @@ title: "DeadlineDuel"
 display_area: projects
 display_order: 40
 thumbnail_type: img
-thumbnail_img: assets\images\projects\DeadlineDuel\DeadlineDuel.png
+thumbnail_img: "assets/images/projects/DeadlineDuel/DeadlineDuel.png"
 thumbnail_vid: ""
 tags:
   - Unity
