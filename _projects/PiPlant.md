@@ -19,9 +19,8 @@ tags:
 <div class="print-hide"> 
 <h2>Demo</h2>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
+<div class="youtube-embed">
   <iframe 
-    style="position: absolute; top: 0; left: 50%; width: 90%; height: 90%; transform: translateX(-50%);" 
     src="https://youtube.com/embed/9FFyFboAQqI" 
     frameborder="0" 
     allowfullscreen="true">
@@ -41,9 +40,8 @@ tags:
 ## Logics
 
 ### 디자이너 편의성을 고려한 Pipe와 Level 팔레트
-<br>
 <div align="center"><img src="/assets/images/projects/PiPlant/PiPlant02.png" width="60%" height="auto"></div>
-
+<br>
 디자이너와 기획자가 쉽게 파이프 이미지를 적용해보고 스테이지를 구성할 수 있도록 커스텀 에디터를 제작했습니다.
 파이프 종류 추가, 테마 설정, 기믹 추가 등 기획이 심화될수록 에디터의 기능도 추가하여 디자이너가 문제없이 스테이지를 구성할 수 있도록 도왔습니다.
 
@@ -64,12 +62,10 @@ tags:
 
 <div align="center"><img src="/assets/images/projects/PiPlant/PiPlant01.png" width="35%" height="auto"></div>
 
-<br>
 
 ### 다양한 기믹을 위한 GimmickPipe
-<br>
 <div align="center"><img src="/assets/images/projects/PiPlant/PiPlant03.png" width="40%" height="auto"></div>
-
+<br>
 PiPlant의 핵심 재미 요소는 다양한 기능을 하는 기믹 파이프입니다.
 폭탄 파이프, Lock-Key 파이프, 얼음 파이프를 파훼해 퍼즐을 풀어야 합니다.
 다양한 파이프를 더 효율적으로 유지보수하고, 새 기믹을 더 쉽게 추가하기 위해 `Interface`를 활용한 구조로 `GimmickPipe`를 설계했습니다.
@@ -230,13 +226,9 @@ public class BombGimmickPipe : GimmickPipe
 
 </details>
 
-<br>
-
-
 ### EventBus를 통한 디커플링
-<br>
 <div align="center"><img src="/assets/images/projects/PiPlant/PiPlant04.png" width="90%" height="auto"></div>
-
+<br>
 협업 과정에서 특정 파일에서 충돌이 나는 경우가 종종 있었습니다. 특히 주요 로직을 관리하는 `GameManager`에서 UI 담당이 코드를 추가하며 충돌이 잦았습니다. 이를 의존성이 높은 상황으로 파악하고 의존도를 낮춰 충돌을 줄이기 위해 EventBus를 통해 디커플링을 구현했습니다.
 주요 이벤트를 `EventBus`로 구현해 구독하고 알림을 보내는 구조로 수정해 직접 다른 클래스에 접근하지 않고도 상태 변화를 감지해 적절한 행동이 가능하도록 리팩토링했습니다.
 
@@ -272,9 +264,6 @@ public static class GameItemEventBus // From ItemManager to UI or Others
 }
 ```
 </details>
-
-<br>
-
 
 ## Epilogue
 

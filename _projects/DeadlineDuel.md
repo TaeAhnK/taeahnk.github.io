@@ -216,7 +216,6 @@ public class BossIdleState : BossBaseState
 <br>
 
 ### 스킬 구현
-<br>
 <div align="center">
     <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel04.gif" width="40%" height="auto" style="border-top: 1px solid black;">
     <img src="/assets/images/projects/DeadlineDuel/DeadlineDuel05.gif" width="40%" height="auto" style="border-top: 1px solid black;">
@@ -228,7 +227,6 @@ public class BossIdleState : BossBaseState
 보스 몬스터의 스킬은 '로스트아크'의 레이드와 유사하게 제작하였습니다.<br>
 보스가 스킬을 사용할 위치를 잠깐 보여준 뒤 이펙트를 재생하고 데미지를 주는 방식입니다.
 
-<br>
 
 <div align="center"><img src="/assets/images/projects/DeadlineDuel/DeadlineDuel03.png" width="70%" height="auto"></div>
 

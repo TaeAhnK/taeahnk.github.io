@@ -13,11 +13,11 @@ collections:
 
 index:
   projects_count: 4
-  other_projects_count: 3
+  other_projects_count: 4
   current_projects_count: 1
   
   projects_columns: 2
-  other_projects_columns: 3
+  other_projects_columns: 4
   current_projects_columns: 1
 
 print:

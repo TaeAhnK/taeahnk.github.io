@@ -332,10 +332,12 @@ public class Match3 : MonoBehaviour
 ```
 
 </details>
-
+<br>
 
 ## Optimization
 픽셀아트와 단순한 로직을 사용해 성능은 차고 넘치지만, 그럼에도 최적화가 가능하다면 시도해 봐야 한다고 생각해 추가 최적화 작업을 시도했습니다.
+
+<br>
 
 ### Object Pool을 활용한 Vegetable 최적화
 Vegetable과 Vegetable이 터질 때 생성되는 파티클은 수많은 생성과 삭제를 반복합니다. 이는 비싼 `Instantiate` 연산과 GC 호출로 이어져 성능에 영향을 줍니다.
@@ -448,7 +450,6 @@ BGM은 다음의 설정을 사용했습니다.
 <div align="center"><img src="/assets/images/projects/SproutPang/SproutPang06.png" width="80%" height="auto"></div>
 Profiler 확인 결과 오디오 메모리가 27.9MB에서 1.9MB로 약 93% 줄었습니다.
 
-<br>
 
 ## Epilogue
 이번 프로젝트를 통해 다양한 디자인 패턴을 실제로 적용하고, 효율적이고 확장성 있는 코드를 작성하는 연습을 할 수 있었습니다. 
